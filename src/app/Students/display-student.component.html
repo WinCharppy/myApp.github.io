@@ -1,0 +1,51 @@
+<div class="panel-heading">
+    <h3 class="panel-title">Id:{{student.id}}/{{student.FirstName | uppercase}} {{student.LastName | uppercase}} </h3>
+</div>
+
+<div class="panel-body">
+    <div class="col-xs-10">
+        <div class="row">
+            <div class="col-xs-3">
+                <img src = {{student.PhotoPath}} width="150" height="150">
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-2">Student Id</div>
+                    <div class="col-xs-6">: {{student.id}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">First Name</div>
+                    <div class="col-xs-6">: {{student.FirstName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">Lat Name</div>
+                    <div class="col-xs-6">: {{student.LastName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">Gender</div>
+                    <div class="col-xs-6">: {{student.Gender}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">Program</div>
+                    <div class="col-xs-6">: {{student.Program}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">Branch</div>
+                    <div class="col-xs-6">: {{student.Branch}}</div>
+                </div>              
+                <div class="row">
+                    <div class="col-xs-2">Status</div>
+                    <div *ngIf="!student.Status" class="col-xs-6">: Pending</div>
+                    <div *ngIf="student.Status" class="col-xs-6">: Accepted</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-footer">
+    <button class="btn btn-primary btn-space btn-width" (click)="viewStudent()">Detail</button>
+    <button class="btn btn-primary btn-space btn-width" (click)="editStudent()">Edit</button>
+    <button class="btn btn-danger btn-space btn-width" (click)="deleteStudent(student.id)">Delete</button>
+</div>
+
